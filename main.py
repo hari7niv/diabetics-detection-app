@@ -1,4 +1,4 @@
-from msilib.schema import Error
+
 import streamlit as st
 import sklearn
 from sklearn import preprocessing
