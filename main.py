@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from torch import ErrorReport
+
 st.header("Diabetics dedection app")
 data = pd.read_csv('data_diab.csv')
 data = data[["Age", "Gender", "Polyuria", "Polydipsia",
