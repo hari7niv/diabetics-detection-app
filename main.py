@@ -1,4 +1,3 @@
-
 import streamlit as st
 import sklearn
 from sklearn import preprocessing
@@ -61,15 +60,14 @@ if Polyphagia == 'no' or Polyphagia == "No":
     Polyphagia = 0
 if Obesity == 'no' or Obesity == "No":
     Obesity = 0
-else:
-    Age, Gender, Polyuria, Polydipsia,sudden_weight_loss, weakness, Polyphagia, Obesity = 0
-    
+if st.button("Submit"):
+    y_pred = model.predict([[Age, Gender, Polyuria, Polydipsia,
+                           sudden_weight_loss, weakness, Polyphagia, Obesity]])
+    for x in range(len(y_pred)):
+            print(y_pred[x])
+            if y_pred[x] == 1:
+                st.text("Negative")
+            if y_pred[x] == 0:
+                st.text("Possitive")
 
-y_pred = model.predict([[Age, Gender, Polyuria, Polydipsia,
-                       sudden_weight_loss, weakness, Polyphagia, Obesity]])
-for x in range(len(y_pred)):
-        print(y_pred[x])
-        if y_pred[x] == 1:
-            st.text("Negative")
-        if y_pred[x] == 0:
             st.text("Possitive")
