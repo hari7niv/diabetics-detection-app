@@ -70,4 +70,3 @@ if st.button("Submit"):
             if y_pred[x] == 0:
                 st.text("Possitive")
 
-            st.text("Possitive")
